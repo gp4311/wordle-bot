@@ -23,20 +23,13 @@ Wordle Bot is an automated solver for the popular [Wordle](https://www.nytimes.c
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/wordle-bot.git
+   git clone https://github.com/gp4311/wordle-bot.git
    cd wordle-bot
 
-2. **Install any dependencies:**
+2. **To run the Wordle Bot simulation, execute the following command:**
 
-    ```bash
-    pip install -r requirements.txt
-
-## Usage
-
-To run the Wordle Bot simulation, execute the following command:
-
-    ```bash
-    python wordle_bot.py
+   ```bash
+   python wordle_bot.py
 
 The script will:
 1. Start with a predetermined initial guess.
