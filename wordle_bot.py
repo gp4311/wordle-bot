@@ -18,19 +18,31 @@ def main():
     solver = Solver(word_list)
 
     print("Welcome to Wordle Bot!")
+    attempts = 0
 
     while True:
         guess = input("Enter a guess (or type 'exit' to quit): ").strip().lower()
         if guess == "exit":
+            print("Goodbye!")
             break
         if guess not in word_list:
             print("Invalid word. Please enter a valid guess from the word list.")
             continue
-        
+
         feedback = input("Enter feedback (G for 🟩, Y for 🟨, X for ⬜): ").strip().upper()
         if len(feedback) != 5 or any(c not in "GYX" for c in feedback):
             print("Invalid feedback. Please enter exactly 5 characters (G, Y, X).")
             continue
+
+        attempts += 1
+        
+        if feedback == "GGGGG":
+            print(f"The word is `{guess.upper()}`! Solved in {attempts} attempts 🎉")
+            break
+
+        if attempts >= 6:
+            print("I failed! 😢 Possible words left:", solver.possible_words)
+            break
 
         solver.process_feedback(guess, feedback)
         next_guess = solver.get_best_guess()
