@@ -3,13 +3,13 @@ Wordle Bot is an automated solver for the popular [Wordle](https://www.nytimes.c
 
 ## Features
 
-- **Automated Gameplay:** Simulates the Wordle game by selecting a random secret word and iteratively guessing based on feedback.
-- **Feedback Processing:** Interprets letter feedback as:
-  - **Green:** Correct letter in the correct position.
-  - **Yellow:** Correct letter in the wrong position.
-  - **Gray:** Letter not in the secret word.
+- **Feedback Processing:**
+  - Analyzes user-provided feedback for each guess and refines the possible words.
+  - Implements three types of letter feedback:
+    - **Green:** Correct letter in the correct position.
+    - **Yellow:** Correct letter in the wrong position.
+    - **Gray:** Letter not in the secret word.
 - **Candidate Filtering:** Dynamically narrows down the list of possible words based on previous guess feedback.
-- **Extensible Strategy:** Basic implementation picks the next guess from the remaining candidate pool. The framework allows for integration of more advanced strategies (e.g., frequency analysis, entropy calculation).
 
 ## Getting Started
 
@@ -26,15 +26,10 @@ Wordle Bot is an automated solver for the popular [Wordle](https://www.nytimes.c
    git clone https://github.com/gp4311/wordle-bot.git
    cd wordle-bot
 
-2. **To run the Wordle Bot simulation, execute the following command:**
+2. **Run the Wordle Bot:**
 
    ```bash
    python wordle_bot.py
-
-The script will:
-1. Start with a predetermined initial guess.
-2. Process the feedback from each guess and filter the candidate list.
-3. Continue guessing until the word is found or the maximum of 6 attempts is reached.
 
 ## Acknowledgements
 
